@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { JSONTree } from 'react-json-tree';
 import jsonpath from 'jsonpath';
+import jmespath from 'jmespath';
+import Editor from "@monaco-editor/react"
 import { dummyData } from './large-data-set';
 import './App.css';
 
@@ -8,7 +10,7 @@ const App = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedPath, setSelectedPath] = useState(null);
     const [path, setPath] = useState('');
-    const [jsonTreeData, setJsonTreeData] = useState("");
+    const [jsonTreeData, setJsonTreeData] = useState([]);
 
 
     const handleFieldSelect = (path) => {
@@ -88,22 +90,26 @@ const App = () => {
     const handleValueClick = (value) => {
         const path = generateJSONPath(dummyData, value);
         handleFieldSelect(path);
-      };
-    
-      const handleExpandPath = () => {
-        setJsonTreeData(jsonpath.value(dummyData, path));
-      };
+    };
+
+    const handleExpandPath = () => {
+        // Evaluate the JSONPath expression
+        console.log(12);
+        const result = jsonpath.query(dummyData, path);
+        console.log(result);
+        setJsonTreeData(result);
+    };
+
+
 
     useEffect(() => {
         if (searchTerm.trim() === '') {
-          setSelectedPath(null);
-          return;
+            setSelectedPath(null);
+            return;
         }
         setSelectedPath(null);
         searchNode(dummyData);
-      }, [searchTerm]);
-
-
+    }, [searchTerm]);
 
     const theme = {
         scheme: 'monokai',
@@ -176,37 +182,54 @@ const App = () => {
                             </span>
                         );
                     }}
-                    shouldExpandNode={(keyName, data, level) => level < 2}
+                    shouldExpandNode={(keyPath, data, level) => expandedNodes.includes(keyPath)}
                     hideRoot
                 />
                 <div>
                     <ul className='text-black'>
-                        {jsonTreeData && (
-                            <JSONTree
-                                data={jsonTreeData}
-                                theme={{
-                                    extend: theme,
-                                    valueLabel: {}
-                                }}
-                                getItemString={(type, data, itemType, itemString) => <span>{itemString}</span>}
-                                labelRenderer={([key]) => key && <strong>{key} :</strong>}
-                                valueRenderer={(raw, data, value) => {
-                                    return (
-                                        <span
-                                            className='cursor-pointer'
-                                        >
-                                            {data}
-                                        </span>
-                                    );
-                                }}
-                                hideRoot
-                                // iw ant to expend by default
-                                shouldExpandNode={(keyName, data, level) => level < 2}
-                            />
+                        <Editor
+                            height='70vh'
+                            defaultLanguage='json'
+                            defaultValue={JSON.stringify(jsonTreeData, null, 2)}
+                            value={JSON.stringify(jsonTreeData, null, 2)}
+                            theme='vs-light'
+                            options={{
+                                minimap: {
+                                    enabled: false,
+                                },
+                            }}
+                        />
+                        {
+                            // <JSONTree
+                            //     data={jsonTreeData}
+                            //     theme={{
+                            //         extend: theme,
+                            //         valueLabel: {}
+                            //     }}
+                            //     getItemString={(type, data, itemType, itemString) => <span></span>}
+                            //     labelRenderer={([key]) => key && <strong>{key}</strong>}
+                            //     valueRenderer={(raw, data, value) => {
+                            //         return (
+                            //             <span>
+                            //                 {data}
+                            //             </span>
+                            //         );
+                            //     }}
+                            //     hideRoot
+                            //     shouldExpandNode={(keyName, data, level) => expandedNodes.includes(keyName)}
+                            // />
+                        }
 
-                        )}
                     </ul>
                 </div>
+            </div>
+            <div>
+                <p>store.book[?(@.title.charAt(0) == 'S')]</p>
+                <p>store.book[?(@.author == 'Evelyn Waugh')]</p>
+                <p>reservations.*</p>
+                <p></p>
+                <p></p>
+                <p></p>
             </div>
         </div>
     );

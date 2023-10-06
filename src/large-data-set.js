@@ -32,5 +32,36 @@ export const dummyData = {
             "color": "red",
             "price": 19.95
         }
-    }
+    },
+    "reservations": [
+        {
+            "instances": [
+                { "state": "running" },
+                { "state": "stopped" }
+            ]
+        },
+        {
+            "instances": [
+                { "state": "terminated" },
+                { "state": "running" }
+            ]
+        }
+    ],
+    "people": [
+        {
+            "age": 20,
+            "other": "foo",
+            "name": "Bob"
+        },
+        {
+            "age": 25,
+            "other": "bar",
+            "name": "Fred"
+        },
+        {
+            "age": 30,
+            "other": "baz",
+            "name": "George"
+        }
+    ]
 }
