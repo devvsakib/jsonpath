@@ -92,10 +92,10 @@ const App = () => {
         handleFieldSelect(path);
     };
 
-    const handleExpandPath = () => {
+    const handleExpandPath = (p) => {
         // Evaluate the JSONPath expression
         console.log(12);
-        const result = jsonpath.query(dummyData, path);
+        const result = jsonpath.query(dummyData, p);
         console.log(result);
         setJsonTreeData(result);
     };
@@ -132,6 +132,17 @@ const App = () => {
     }
     return (
         <div className='max-w-[1240px] mx-auto text-black'>
+             <div>
+                <h2 className='font-bold'>Operator</h2>
+                <p>store.book[?(@.title.charAt(0) == 'S')]</p>
+                <p>store.book[?(@.price {'<'}= 13)]</p>
+                <p>store.book[?(@.price {'>'}= 13)]</p>
+                <p>store.book[?(@.author == 'Evelyn Waugh')]</p>
+                <p>reservations.*</p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
             <div className='flex gap-10'>
                 <div>
                     <input
@@ -151,9 +162,9 @@ const App = () => {
                         <input
                             type='text'
                             placeholder='Enter JSON path...'
-                            value={path}
-                            className='border border-black outline-none px-2 rounded py-1'
-                            onChange={(e) => setPath(e.target.value)}
+                            // value={path}
+                            className='border border-black outline-none px-2 rounded py-1 w-auto'
+                            onChange={(e) => handleExpandPath(e.target.value)}
                         />
                     </div>
                     <div>
@@ -223,14 +234,7 @@ const App = () => {
                     </ul>
                 </div>
             </div>
-            <div>
-                <p>store.book[?(@.title.charAt(0) == 'S')]</p>
-                <p>store.book[?(@.author == 'Evelyn Waugh')]</p>
-                <p>reservations.*</p>
-                <p></p>
-                <p></p>
-                <p></p>
-            </div>
+           
         </div>
     );
 };
