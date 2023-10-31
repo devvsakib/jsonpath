@@ -18,3 +18,11 @@
   -webkit-text-size-adjust: 100%; */
 }
 
+a:hover{
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.btn{
+    @apply hover:text-white hover:bg-ai-pink/70 bg-ai-pink text-white border-0
+}
