@@ -59,7 +59,7 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, removeRule, jsonV
                 ))}
             </Select>
             {
-                true && (
+                isTreeVisible && (
                     <div className='absolute right-36 -top-5'>
                         <JSONPathSelector data={query} setSelectedValue={setSelectedValue} setSelectedJSONPath={setSelectedJSONPath} setIsTreeVisible={setIsTreeVisible} />
                     </div>
