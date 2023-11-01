@@ -147,7 +147,6 @@ const QueryBuilder = () => {
             ...query,
             rules: updateStructureRecursively(query.rules),
         };
-        console.log(updatedRule);
         setQuery(updatedStructure);
     };
 

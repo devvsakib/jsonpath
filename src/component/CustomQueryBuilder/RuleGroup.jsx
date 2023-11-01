@@ -32,11 +32,11 @@ const RuleGroup = ({ query, group, onUpdateGroup, handleRuleUpdate, addRuleToGro
                         group={rule}
                         onUpdateGroup={onUpdateGroup}
                         addRuleToGroup={addRuleToGroup}
-                        removeRule={removeRule}
                         addGroup={addGroup}
                         onRemoveGroup={onRemoveGroup}
                         handleRuleUpdate={handleRuleUpdate}
                         supportedOperators={supportedOperators}
+                        removeRule={removeRule}
                     />
                 ))
                 }
