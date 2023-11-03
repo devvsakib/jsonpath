@@ -13,7 +13,7 @@ const RuleGroup = ({ query, group, onUpdateGroup, handleRuleUpdate, addRuleToGro
         };
 
         return (
-            <div className='border border-black p-2 rounded'>
+            <div className='border border-black/30 p-2 rounded mt-2'>
                 <div className='flex gap-2 mb-2'>
                     <Select defaultValue={combinator} onChange={handleCombinatorChange}>
                         <Option value="and">AND</Option>

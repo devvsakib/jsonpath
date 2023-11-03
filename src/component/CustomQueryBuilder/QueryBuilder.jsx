@@ -1,11 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Rule from './Rule';
 import RuleGroup from './RuleGroup';
 import { Button, Select } from 'antd';
-import { JSONTree } from 'react-json-tree';
 import { Editor } from '@monaco-editor/react';
-import JSONPathSelector from '../JSONPathSelector';
 const supportedOperators = [
     { name: 'begins_with', label: 'begins with' },
     { name: 'not_begins_with', label: 'not begins with' },
@@ -31,8 +29,6 @@ const supportedOperators = [
 const { Option } = Select;
 
 const QueryBuilder = () => {
-    const [selectedJSONPath, setSelectedJSONPath] = useState(null);
-    const [selectedValue, setSelectedValue] = useState(null);
     const [query, setQuery] = useState({
         type: 'group',
         rules: [
@@ -47,6 +43,7 @@ const QueryBuilder = () => {
         condition: 'and',
     });
 
+    // parent rule add function
     const addRule = () => {
         const updatedStructure = { ...query };
         updatedStructure.rules.push({
@@ -58,6 +55,8 @@ const QueryBuilder = () => {
         });
         setQuery(updatedStructure);
     };
+
+    // add rule to group function
     const addRuleToGroup = (groupId) => {
         const updatedStructure = { ...query };
 
@@ -95,6 +94,7 @@ const QueryBuilder = () => {
         setQuery(updatedStructure);
     };
 
+    // find group by id function
     const findGroupById = (groups, groupId) => {
         for (let i = 0; i < groups.length; i++) {
             const group = groups[i];
@@ -111,7 +111,8 @@ const QueryBuilder = () => {
         return null;
     };
 
-    const addGroup = () => {
+    // group adding function
+    const addGroup = (parentGorupId) => {
         const updatedStructure = { ...query };
         const newGroupId = uuidv4();
         const newGroup = {
@@ -120,17 +121,29 @@ const QueryBuilder = () => {
             id: newGroupId,
             rules: [],
         };
-
-        updatedStructure.rules.push(newGroup);
+        if (typeof parentGorupId === "string") {
+            const group = findGroupById(updatedStructure.rules, parentGorupId);
+            if (group) {
+                if (!group.rules) {
+                    group.rules = [];
+                }
+                group.rules.push(newGroup);
+            }
+        } else {
+            updatedStructure.rules.push(newGroup);
+        }
         setQuery(updatedStructure);
+
     };
 
+    // update condition function and or
     const handleConditionChange = (value) => {
         const updatedStructure = { ...query };
         updatedStructure.condition = value;
         setQuery(updatedStructure);
     };
 
+    // update rule function
     const handleRuleUpdate = (updatedRule) => {
         const updateStructureRecursively = (rules) => {
             return rules.map((rule) => {
@@ -150,9 +163,9 @@ const QueryBuilder = () => {
         setQuery(updatedStructure);
     };
 
+    // update group value function
     const handleGroupUpdate = (updatedGroup) => {
         const updatedStructure = { ...query };
-        // Find the group by its ID and update it
         const groupIndex = updatedStructure.rules.findIndex((g) => g.id === updatedGroup.id);
         if (groupIndex !== -1) {
             updatedStructure.rules[groupIndex] = updatedGroup;
@@ -196,6 +209,7 @@ const QueryBuilder = () => {
         setQuery(updatedStructure);
     };
 
+    // render query elements
     const renderQueryElements = () => {
         return query.rules.map((rule, index) => {
             if (rule.type === 'rule') {
@@ -246,7 +260,7 @@ const QueryBuilder = () => {
                             <Button className='btn' onClick={addRule}>Add Rule</Button>
                             <Button className='btn' onClick={addGroup}>Add Group</Button>
                         </div>
-                        <div className='grid gap-2 bg-gray-300 p-2 rounded'>
+                        <div className='grid gap-2 bg-gray-300/60 backdrop-blur-sm p-2 rounded'>
                             {renderQueryElements()}
                         </div>
                     </div>
