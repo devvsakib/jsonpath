@@ -56,7 +56,7 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
             <Input
                 type="text"
                 placeholder="field"
-                value={path}
+                value={rule.field}
                 onChange={handleFieldChange}
                 onFocus={() => setIsTreeVisible(true)}
 
@@ -83,7 +83,7 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
                         />
                     </div>
                 )}
-            <Input type="text" placeholder='value' value={"" || rule.value} onChange={handleValueChange} />
+            <Input type="text" placeholder='value' value={rule.value} onChange={handleValueChange} />
 
             <Button className='btn flex items-center' onClick={() => removeRule(rule.id)}><CloseOutlined /></Button>
         </div>
