@@ -1,9 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Rule from './Rule';
 import RuleGroup from './RuleGroup';
 import { Button, Select } from 'antd';
+import { JSONTree } from 'react-json-tree';
 import { Editor } from '@monaco-editor/react';
+import JSONPathSelector from '../JSONPathSelector';
 const supportedOperators = [
     { name: 'begins_with', label: 'begins with' },
     { name: 'not_begins_with', label: 'not begins with' },
@@ -244,7 +246,7 @@ const QueryBuilder = () => {
     };
 
     return (
-        <div className='grid grid-cols-2 gap-10 relative'>
+        <div className='grid grid-cols-2 gap-10'>
             <div className='grid gap-10'>
                 <div>
                     <div>
@@ -299,14 +301,6 @@ const QueryBuilder = () => {
                     style={{ padding: '10px' }}
                 /> */}
                 </div>
-            </div>
-            <div className=''>
-                <h2 className='font-bold text-red-500'>JSON Tree</h2>
-                {/* <JSONPathSelector
-                    data={query}
-                    // setSelectedValue={setSelectedValue}
-                    // p={setSelectedPath}
-                /> */}
             </div>
         </div>
     );

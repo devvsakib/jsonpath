@@ -1,26 +1,21 @@
 import { Button, Input, Select } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
 import JSONPathSelector from '../JSONPathSelector';
 
 const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
     const [isTreeVisible, setIsTreeVisible] = useState(false);
     const [selectedValue, setSelectedValue] = useState('');
+    const [fieldPath, setFieldPath] = useState('');
     const [selectedJSONPath, setSelectedJSONPath] = useState('');
     const [path, setPath] = useState('');
+    const selectorRef = useRef(null);
 
-    const handleFieldChange = (e) => {
-        const updatedRule = { ...rule, field: e.target.value };
-        onUpdateRule(updatedRule);
-    };
-
-    const handleOperatorChange = (value) => {
-        const updatedRule = { ...rule, operator: value };
-        onUpdateRule(updatedRule);
-    };
-
-    const handleValueChange = (e) => {
-        const updatedRule = { ...rule, value: e.target.value };
+    const updateRuleField = (fieldName, value) => {
+        const updatedRule = { ...rule, [fieldName]: value };
+        if (fieldName === 'value') {
+            setFieldPath(value);
+        }
         onUpdateRule(updatedRule);
     };
 
@@ -44,27 +39,49 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
 
     useEffect(() => {
         const replaced = selectedJSONPath.replace(/\d/g, '*');
-        if (replaced) {
+        if (replaced || selectedValue) {
             const updatedRule = { ...rule, field: replaced, value: selectedValue };
             setPath(replaced);
             onUpdateRule(updatedRule);
         }
     }, [selectedValue]);
 
+    const handleSelectorToggle = () => {
+        setTimeout(() => {
+            setIsTreeVisible(true);
+        }, 100);
+        // setIsTreeVisible((prevState) => !prevState);
+    };
+    const handleClickOutside = (event) => {
+        if (selectorRef.current && !selectorRef.current.contains(event.target)) {
+            setIsTreeVisible(false);
+        }
+    };
+    useEffect(() => {
+        if (isTreeVisible) {
+            document.addEventListener('click', handleClickOutside);
+        } else {
+            document.removeEventListener('click', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [isTreeVisible]);
+
     return (
         <div className='flex gap-2 justify-between mt-2'>
             <Input
                 type="text"
                 placeholder="field"
-                value={rule.field}
-                onChange={handleFieldChange}
-                onFocus={() => setIsTreeVisible(true)}
-
+                value={rule.field || path}
+                onChange={e => updateRuleField('field', e.target.value)}
+                onFocus={handleSelectorToggle}
             />
 
             <Select
                 value={rule.operator || supportedOperators[0].name}
-                onChange={handleOperatorChange}
+                onChange={op => updateRuleField('operator', op)}
             >
                 {supportedOperators.map((operator) => (
                     <Select.Option key={operator.name} value={operator.name}>
@@ -72,18 +89,25 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
                     </Select.Option>
                 ))}
             </Select>
-            {
-                isTreeVisible && (
-                    <div className='absolute right-36 -top-5'>
-                        <JSONPathSelector
-                            data={query}
-                            setSelectedValue={setSelectedValue}
-                            setSelectedJSONPath={setSelectedJSONPath}
-                            setIsTreeVisible={setIsTreeVisible}
-                        />
-                    </div>
-                )}
-            <Input type="text" placeholder='value' value={rule.value} onChange={handleValueChange} />
+
+            {isTreeVisible && (
+                <div ref={selectorRef} className='fixed -top-5 -right-[20vw] z-50'>
+                    <JSONPathSelector
+                        data={query}
+                        setSelectedValue={setSelectedValue}
+                        setSelectedJSONPath={setSelectedJSONPath}
+                        setIsTreeVisible={setIsTreeVisible}
+                        fieldPath={fieldPath}
+                    />
+                </div>
+            )}
+
+            <Input
+                type="text"
+                placeholder='value'
+                value={rule.value}
+                onChange={e => updateRuleField('value', e.target.value)}
+            />
 
             <Button className='btn flex items-center' onClick={() => removeRule(rule.id)}><CloseOutlined /></Button>
         </div>
