@@ -3,18 +3,18 @@ import { JSONTree } from 'react-json-tree';
 import jsonpath from 'jsonpath';
 import { Button, Input } from 'antd';
 import { ArrowDownOutlined, CloseOutlined } from '@ant-design/icons';
+import { dummyData as data } from '../large-data-set';
 
-const JSONPathSelector = ({ data, setIsTreeVisible, setSelectedJSONPath, setSelectedValue }) => {
+const JSONPathSelector = ({ setIsTreeVisible, setSelectedJSONPath, setSelectedValue, fieldPath }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedPath, setSelectedPath] = useState(null);
     const [jsonValue, setJsonValue] = useState('');
     const [jsonTreeValue, setJsonTreeValue] = useState('');
-    const [openTree, setOpenTree] = useState(false);
     const [advanceSearch, setAdvanceSearch] = useState(false);
     const [advanceSearchPath, setAdvanceSearchPath] = useState('$');
     // $[?(@.name.charAt(0) == 'S')]
     const handleFieldSelect = (path) => {
-        setIsTreeVisible(false);
+        // setIsTreeVisible(false);
         setSelectedPath(path);
         setSelectedJSONPath(path);
     };
@@ -152,6 +152,11 @@ const JSONPathSelector = ({ data, setIsTreeVisible, setSelectedJSONPath, setSele
         try {
             const result = jsonpath.query(data, p);
             setJsonTreeValue(result);
+            if (result.length === 0) {
+                setJsonValue("Value not found");
+                return;
+            }
+
         } catch (error) { }
     };
 
@@ -180,6 +185,9 @@ const JSONPathSelector = ({ data, setIsTreeVisible, setSelectedJSONPath, setSele
         handlePath(advanceSearchPath);
     }, [advanceSearchPath]);
 
+    useEffect(() => {
+        handlePath(fieldPath);
+    }, [fieldPath]);
 
     useEffect(() => {
         if (searchTerm.trim() === '') {
@@ -211,6 +219,26 @@ const JSONPathSelector = ({ data, setIsTreeVisible, setSelectedJSONPath, setSele
         base0E: '#a6e22e',
         base0F: '#66d9ef',
     }
+    useEffect(() => {
+        if (typeof jsonTreeValue !== "object" && jsonTreeValue) {
+            setSelectedValue(jsonTreeValue);
+        }
+    }, [jsonTreeValue]);
+
+    const getVal = () => {
+        const result = jsonpath.query(data, advanceSearchPath);
+        setJsonTreeValue(result);
+        if (result.length === 0) {
+            setJsonValue("Value not found");
+            setSelectedValue("Value not found");
+            return;
+        }
+        //
+        if (typeof result === 'string' || Array.isArray(result)) {
+            setSelectedValue(result);
+            return
+        }
+    }
 
     return (
         <div className='mt-2 mx-auto text-black bg-white'>
@@ -221,10 +249,9 @@ const JSONPathSelector = ({ data, setIsTreeVisible, setSelectedJSONPath, setSele
                 <p>[?(@.is_global)]</p>
             </div>
             */}
-            <div className=''>
+            {/* <div className=''>
                 <Button className='mb-2' onClick={e => setOpenTree(true)}>Open Tree</Button>
                 <div className='grid gap-2'>
-
                     <Input
                         type='text'
                         placeholder='Path'
@@ -243,17 +270,16 @@ const JSONPathSelector = ({ data, setIsTreeVisible, setSelectedJSONPath, setSele
                     <h3 className='text-gray-500'>Selected Path:</h3>
                     <p className='text-black mb-0'>{selectedPath}</p>
                 </div>
-            </div>
+            </div> */}
 
             <div className='gap-10 p-4 mt-2 bg-[#f8f8f2] rounded absolute left-0 lg:left-[-75%] h-[96vh]  top-0 overflow-hidden w-[90vw] lg:w-[500px] z-40'>
-                {/* add a popup for jsontree adn button  */}
                 <div className='flex justify-between gap-2'>
                     <div className=''>
                         <Input
                             type='text'
                             placeholder='Search...'
                             value={searchTerm}
-                            className=' outline-none px-2 rounded py-1'
+                            className='outline-none px-2 rounded py-1'
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                         <Button className='my-1 py-1 px-2' onClick={() => setAdvanceSearch(!advanceSearch)}>
@@ -261,13 +287,18 @@ const JSONPathSelector = ({ data, setIsTreeVisible, setSelectedJSONPath, setSele
                         </Button>
                         {
                             advanceSearch &&
-                            <Input
-                                type='text'
-                                placeholder='Search for a path...'
-                                value={advanceSearchPath}
-                                className='outline-none px-2 rounded py-1'
-                                onChange={(e) => handlePath(e.target.value)}
-                            />
+                            <div className='flex gap-2 items-center'>
+                                <Input
+                                    type='text'
+                                    placeholder='Search for a path...'
+                                    value={advanceSearchPath}
+                                    className='outline-none px-2 rounded py-1'
+                                    onChange={(e) => handlePath(e.target.value)}
+                                />
+                                <Button className='' onClick={getVal}>
+                                    OK
+                                </Button>
+                            </div>
                         }
                         <div className='flex gap-2 items-center  mt-1'>
                             <h3 className='text-gray-500'>Selected Path:</h3>
