@@ -33,6 +33,7 @@ const { Option } = Select;
 const QueryBuilder = () => {
     const [query, setQuery] = useState({
         type: 'group',
+        id: uuidv4(),
         rules: [
             {
                 type: 'rule',
