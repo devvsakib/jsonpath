@@ -5,12 +5,14 @@ export const dummyData = {
                 "category": "reference",
                 "author": "Nigel Rees",
                 "title": "Sayings of the Century",
-                "price": 8.95
+                "price": 8.95,
+                "available": true,
             },
             {
                 "category": "fiction",
                 "author": "Evelyn Waugh",
                 "title": "Sword of Honour",
+                "available": false,
                 "price": 12.99
             },
             {
