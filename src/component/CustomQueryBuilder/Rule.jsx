@@ -11,13 +11,49 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
     const [path, setPath] = useState('');
     const selectorRef = useRef(null);
 
+    const typeChecker = (value) => {
+        if (typeof value === 'boolean') {
+            return "boolean";
+        } else if (!isNaN(Number(value))) {
+            const floatValue = parseFloat(value);
+            if (!Number.isInteger(floatValue)) {
+                return "float";
+            } else {
+                return "number";
+            }
+        } else if (typeof value === 'string') {
+            if (value === 'true' || value === 'false') {
+                return "boolean";
+            }
+            try {
+                const parsedValue = JSON.parse(value);
+                if (Array.isArray(parsedValue)) {
+                    // Check for trailing comma in array
+                    const isArrayWithTrailingComma = /\[(.*),\s*\]/;
+                    if (isArrayWithTrailingComma.test(value)) {
+                        return "string";
+                    }
+                    return "array";
+                }
+                if (isNaN(parsedValue)) {
+                    return "NaN";
+                }
+            } catch (error) {
+                return "string";
+            }
+        }
+        return typeof value;
+    };
+
     const updateRuleField = (fieldName, value) => {
-        const updatedRule = { ...rule, [fieldName]: value };
+        let valType = typeChecker(value);
+        const updatedRule = { ...rule, [fieldName]: value, valueType: valType };
         if (fieldName === 'value') {
             setFieldPath(value);
         }
         onUpdateRule(updatedRule);
     };
+
 
     const removeRule = (ruleId) => {
         const removeRuleFromGroups = (groups) => {
@@ -39,8 +75,9 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
 
     useEffect(() => {
         const replaced = selectedJSONPath.replace(/\d/g, '*');
+        console.log(typeof selectedValue);
         if (replaced || selectedValue) {
-            const updatedRule = { ...rule, field: replaced, value: selectedValue };
+            const updatedRule = { ...rule, field: replaced, value: selectedValue, valueType: typeof selectedValue };
             setPath(replaced);
             onUpdateRule(updatedRule);
         }
