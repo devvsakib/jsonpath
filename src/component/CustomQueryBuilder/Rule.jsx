@@ -127,7 +127,7 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
                 ))}
             </Select>
 
-            {isTreeVisible && (
+            {/* {isTreeVisible && ( */}
                 <div ref={selectorRef} className='fixed -top-5 -right-[20vw] z-50'>
                     <JSONPathSelector
                         data={query}
@@ -137,7 +137,7 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
                         fieldPath={fieldPath}
                     />
                 </div>
-            )}
+            {/* )} */}
 
             <Input
                 type="text"
