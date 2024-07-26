@@ -146,7 +146,7 @@ const columns = [
         title: 'Action',
         key: 'action',
         render: () => (
-            <Button type="primary">Select Plan</Button>
+            <Button type="primary">Demo</Button>
         ),
     },
 ];
@@ -196,7 +196,7 @@ const PricingTable = () => {
                         <div key={plan.key} className="p-4 bg-blue-900/20 rounded-md text-center">
                             <p className="text-xl">{plan.pricingModel}</p>
                             <p className="text-2xl font-bold">{plan.price}</p>
-                            <Button className="mt-4 w-full text-white">Select Plan</Button>
+                            <Button className="mt-4 w-full text-white">Demo</Button>
                         </div>
                     ))}
                 </div>
@@ -248,9 +248,11 @@ const PricingTable = () => {
                         </td>
                         {pricingData.map(plan => (
                             <th key={plan.key} className="p-4  rounded-md text-center">
-                                <p className="text-xl">{plan.pricingModel}</p>
+                                <p className="text-xl mb-4">{plan.pricingModel}</p>
                                 {/* <p className="text-2xl font-bold">{plan.price}</p> */}
-                                <Button className="mt-4 w-full text-white">Select Plan</Button>
+                                <div className=''>
+                                    <Button className="w-full text-white">Demo</Button>
+                                </div>
                             </th>
                         ))}
                     </tr>
