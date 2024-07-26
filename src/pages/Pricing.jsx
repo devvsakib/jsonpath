@@ -1,4 +1,4 @@
-import PricingTable from "./PricingTable";
+import PricingTable from "../component/Pricing/PricingTable";
 
 const Pricing = () => {
   return <div className="p-5">

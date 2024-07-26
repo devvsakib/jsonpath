@@ -46,6 +46,7 @@ body {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+  /* background: #161B21; */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -141,11 +142,6 @@ div.column:nth-child(1)>ul:nth-child(1)>li:nth-child(1) {
   }
 }
 
-p {
-  font-family: Arial;
-  font-size: 9px;
-}
-
 /* .column {
   float: left;
   width: 33.33%;
@@ -171,4 +167,23 @@ p {
   -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   transition: all 0.3s ease 0s;
+}
+
+.autobotGrad,
+.featureCount {
+  background: linear-gradient(to right, orange, #de6292, orange);
+  background-clip: border-box;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: 700;
+  -webkit-text-fill-color: transparent;
+}
+
+.featureCount {
+  background: linear-gradient(to bottom, #fff, #161b2100);
+  background-clip: border-box;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: 700;
+  -webkit-text-fill-color: transparent;
 }
