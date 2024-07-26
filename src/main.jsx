@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
-import TestTable from './TestTable.jsx'
-import Pricing from './pages/Pricing.jsx'
-import LandingPage from './pages/LandingPage.jsx'
+import { RouterProvider } from 'react-router-dom'
+import { Toaster } from 'sonner'
+import router from './routes'
 
-ReactDOM.createRoot(document.getElementById('root')).render(<LandingPage />)
-// ReactDOM.createRoot(document.getElementById('root')).render(<Pricing />)
-// ReactDOM.createRoot(document.getElementById('root')).render(<TestTable />)
-// ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+        <RouterProvider router={router}></RouterProvider>
+        <Toaster />
+    </React.StrictMode>
+)

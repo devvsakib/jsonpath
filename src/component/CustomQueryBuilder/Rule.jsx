@@ -1,7 +1,6 @@
 import { Button, Input, Select } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
-import JSONPathSelector from '../JSONPathSelector';
 
 const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
     const [isTreeVisible, setIsTreeVisible] = useState(false);
@@ -126,19 +125,6 @@ const Rule = ({ query, rule, supportedOperators, onUpdateRule, jsonValue }) => {
                     </Select.Option>
                 ))}
             </Select>
-
-            {/* {isTreeVisible && ( */}
-                <div ref={selectorRef} className='fixed -top-5 -right-[20vw] z-50'>
-                    <JSONPathSelector
-                        data={query}
-                        setSelectedValue={setSelectedValue}
-                        setSelectedJSONPath={setSelectedJSONPath}
-                        setIsTreeVisible={setIsTreeVisible}
-                        fieldPath={fieldPath}
-                    />
-                </div>
-            {/* )} */}
-
             <Input
                 type="text"
                 placeholder='value'

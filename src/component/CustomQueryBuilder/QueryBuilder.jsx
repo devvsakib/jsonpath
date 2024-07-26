@@ -262,11 +262,10 @@ const QueryBuilder = () => {
                         }
                     </div>
                     <Button className='btn hover:text-white mt-3' onClick={() => console.log(query)}>Ok</Button>
-                    {/* <Button onClick={transformAndUseData}>Transform and Use Data</Button> */}
                 </div>
 
                 {/* json viewer */}
-                <div className='gap-10 px-4 mt-2 bg-[#f8f8f2] rounded'>
+                <div className='gap-10 px-4 mt-2 bg-[#f8f8f2] rounded fixed right-[0vw] z-50'>
                     <Editor
                         height="70vh"
                         defaultLanguage="json"
@@ -279,22 +278,6 @@ const QueryBuilder = () => {
                             }
                         }}
                     />
-                    {/* <JSONTree
-                    data={query}
-                    getItemString={(type, data, itemType, itemString, keyPath) => <span></span>}
-                    labelRenderer={([key, parentKey]) => <strong>{key} : </strong>}
-                    valueRenderer={(raw, value) => {
-                        return (
-                            <span
-                                className='cursor-pointer'
-                            >
-                                {raw}
-                            </span>
-                        );
-                    }}
-                    hideRoot
-                    style={{ padding: '10px' }}
-                /> */}
                 </div>
             </div>
         </div>

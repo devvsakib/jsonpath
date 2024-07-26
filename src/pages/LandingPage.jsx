@@ -1,4 +1,4 @@
-import Header from "../component/Landing/Header";
+import Header from "../component/MainNavigation";
 import { useEffect, useState } from "react";
 import FeaturesGrid from "../component/Landing/FeaturesGrid";
 import PricingTable from "../component/Pricing/PricingTable";

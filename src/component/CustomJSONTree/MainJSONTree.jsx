@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import QueryBuilder from './component/CustomQueryBuilder/QueryBuilder'
+import QueryBuilder from '../CustomQueryBuilder/QueryBuilder'
 import JSONPathSelector from './JSONPath'
-import { dummyData as data, dummyData } from './large-data-set';
+import { dummyData as data, dummyData } from '../../large-data-set';
 import { FaRecycle } from 'react-icons/fa';
 import { Input } from 'antd';
 
@@ -29,7 +29,7 @@ const jsonData = {
         "car3": "Fiat"
     }
 };
-const App = () => {
+const MainJSONTree = () => {
     const [selectedInfo, setSelectedInfo] = useState({ path: '', value: null });
     const [inputValue, setInputValue] = useState('');
 
@@ -49,7 +49,7 @@ const App = () => {
     }, [selectedInfo]);
 
     return (
-        <div className='max-w-[1280px] mx-auto mt-10'>
+        <div className='max-w-[1280px] mx-auto pt-20'>
             <div className='grid gap-5'>
                 {/* <div className='mt-3 pr-5 max-w-xl'>
                     <Input
@@ -91,4 +91,4 @@ const App = () => {
     )
 }
 
-export default App
+export default MainJSONTree
