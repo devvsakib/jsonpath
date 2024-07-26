@@ -1,6 +1,7 @@
 import { Dropdown } from "antd";
 import { useState } from "react";
 import { useEffect } from "react";
+import { FaGithub, FaGithubAlt } from "react-icons/fa6";
 import { Link, useLocation, useParams } from "react-router-dom";
 
 const MainNavigation = () => {
@@ -30,7 +31,10 @@ const MainNavigation = () => {
         <header className={`top-0 left-0 flex justify-between items-center py-3 px-5 md:px-10 fixed w-full ${isLandingPage && "bg-darkBg"}`}>
             <div>
                 <Link to="/">
-                    <img src="/images/landing/logo_for_dark.svg" className="w-1/2" />
+                   {isLandingPage ? <img src="/images/landing/logo_for_dark.svg" className="w-1/2" />
+                    :
+                    <p className="font-bold text-xl font-[cursive]">Area 51</p>   
+                }
                 </Link>
             </div>
             <div className="flex items-center  gap-4">
@@ -46,7 +50,7 @@ const MainNavigation = () => {
                         </Link>
                     );
                 })}
-                <a href={"#"} legacyBehavior>
+                <Link to={"https://github.com/devvsakib/"} legacyBehavior  target="_blank">
                     <button
                         onClick={toggleNav}
                         style={{
@@ -54,13 +58,13 @@ const MainNavigation = () => {
                             cursor: "pointer",
                             background: 'linear-gradient(to right, orange, rgb(236 72 120))',
                             color: "white",
-                            padding: "0.4rem 1rem",
+                            padding: "0.4rem .5rem",
                         }}
                         className="rounded"
                     >
-                        Login
+                        <FaGithubAlt className="text-2xl"/>
                     </button>
-                </a>
+                </Link>
             </div>
         </header>
     );
