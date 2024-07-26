@@ -322,13 +322,19 @@ const JSONPathSelector = ({ setIsTreeVisible, setSelectedJSONPath, setSelectedVa
                                 justifyContent: "space-between"
                             }
                         }}
-                        getItemString={(type, data, itemType, itemString, keyPath) => <span className='cursor-pointer'>{itemType}</span>}
+                        getItemString={(type, data, itemType, itemString, keyPath) => <span className='cursor-pointer'>{console.log(keyPath)}</span>}
                         labelRenderer={(keyPath, nodeType) => <strong
                             onClick={() => {
-                                handleValueClick(_, keyPath);
-                                // console.log(value, keyPath, expanded, expandable, rootKey)
+                                // handleValueClick(_, keyPath);
+                                console.log("keyPath", keyPath, nodeType);
                             }}
-                            className='cursor-pointer '>{keyPath[0]}</strong>}
+                            className='cursor-pointer '>
+                            {
+                                nodeType == "Array" ? keyPath[0] : nodeType !== "Object" ? keyPath[0] : ("Item " + (keyPath[0] + 1)) 
+
+                            }
+                            {console.log("keyPath", keyPath, nodeType)}
+                        </strong>}
                         valueRenderer={(raw, value, ...keyPath) => {
                             return (
                                 <span
@@ -346,7 +352,7 @@ const JSONPathSelector = ({ setIsTreeVisible, setSelectedJSONPath, setSelectedVa
 
             <div className='gap-10 p-4 mt-2 bg-[#f8f8f2] rounded'>
                 <p className='mt-2 font-semibold'>Value:</p>
-                <JSONTree
+                {/* <JSONTree
                     data={jsonTreeValue}
                     theme={{
                         extend: theme,
@@ -366,7 +372,7 @@ const JSONPathSelector = ({ setIsTreeVisible, setSelectedJSONPath, setSelectedVa
                         );
                     }}
                     hideRoot
-                />
+                /> */}
             </div>
         </div>
     );

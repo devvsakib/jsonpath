@@ -34,15 +34,7 @@ const QueryBuilder = () => {
     const [query, setQuery] = useState({
         type: 'group',
         id: uuidv4(),
-        rules: [
-            {
-                type: 'rule',
-                id: uuidv4(),
-                field: '',
-                operator: 'begins_with',
-                value: '',
-            },
-        ],
+        rules: [],
         condition: 'and',
     });
 
@@ -263,16 +255,17 @@ const QueryBuilder = () => {
                             <Button className='btn' onClick={addRule}>Add Rule</Button>
                             <Button className='btn' onClick={addGroup}>Add Group</Button>
                         </div>
-                        <div className='grid gap-2 bg-gray-300/60 backdrop-blur-sm p-2 rounded'>
-                            {renderQueryElements()}
-                        </div>
+                        {
+                            query.rules.length && <div className='grid gap-2 bg-gray-300/60 backdrop-blur-sm p-2 rounded'>
+                                {renderQueryElements()}
+                            </div>
+                        }
                     </div>
                     <Button className='btn hover:text-white mt-3' onClick={() => console.log(query)}>Ok</Button>
-                    {/* <Button onClick={transformAndUseData}>Transform and Use Data</Button> */}
                 </div>
 
                 {/* json viewer */}
-                <div className='gap-10 px-4 mt-2 bg-[#f8f8f2] rounded'>
+                <div className='gap-10 px-4 mt-2 bg-[#f8f8f2] rounded fixed right-[0vw] z-50'>
                     <Editor
                         height="70vh"
                         defaultLanguage="json"
@@ -285,22 +278,6 @@ const QueryBuilder = () => {
                             }
                         }}
                     />
-                    {/* <JSONTree
-                    data={query}
-                    getItemString={(type, data, itemType, itemString, keyPath) => <span></span>}
-                    labelRenderer={([key, parentKey]) => <strong>{key} : </strong>}
-                    valueRenderer={(raw, value) => {
-                        return (
-                            <span
-                                className='cursor-pointer'
-                            >
-                                {raw}
-                            </span>
-                        );
-                    }}
-                    hideRoot
-                    style={{ padding: '10px' }}
-                /> */}
                 </div>
             </div>
         </div>
