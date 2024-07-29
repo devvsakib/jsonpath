@@ -4,6 +4,7 @@ import FeaturesGrid from "../component/Landing/FeaturesGrid";
 import PricingTable from "../component/Pricing/PricingTable";
 import { BiCheck, BiCode } from "react-icons/bi";
 import { IoCloseSharp } from "react-icons/io5";
+import Carousel from "../component/Landing/Carousel";
 
 const LandingPage = () => {
     const [browserWidth, setBrowserWidth] = useState(0);
@@ -43,6 +44,12 @@ const LandingPage = () => {
                             </button>
                         </a>
                     </div>
+                </section>
+
+                {/* brand carousel */}
+                <section className="h-screen">
+                    <div className={"hidden md:block text-3xl md:text-4xl font-semibold mt-10 md:mt-0 text-center text-white "}><span className="autobotGrad">Trusted By</span></div>
+                    <Carousel />
                 </section>
 
                 {/* Video section */}
@@ -105,7 +112,7 @@ const LandingPage = () => {
                 </section>
 
                 {/* Features section */}
-                <section className="min-h-screen py-20"  id="pricing">
+                <section className="min-h-screen py-20" id="pricing">
                     <div className={"text-center mb-10"}>
                         <h3 className='autobotGrad text-3xl md:text-4xl inline-block'>Features</h3>
                     </div>
