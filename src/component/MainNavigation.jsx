@@ -28,7 +28,7 @@ const MainNavigation = () => {
     const toggleNav = () => setIsNavOpen(!isNavOpen)
 
     return (
-        <header className={`top-0 left-0 flex justify-between items-center py-3 px-5 md:px-10 fixed w-full ${isLandingPage && "bg-darkBg"}`}>
+        <header className={`top-0 left-0 flex justify-between items-center py-3 px-5 md:px-10  w-full ${isLandingPage && "bg-darkBg text-white"}`}>
             <div>
                 <Link to="/">
                    {isLandingPage ? <img src="/images/landing/logo_for_dark.svg" className="w-1/2" />

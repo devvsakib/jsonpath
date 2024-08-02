@@ -19,7 +19,18 @@ const LandingPage = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-
+//     return <section className="min-h-screen relative" id="pricing">
+//     <div className="pricing-overlay py-20  ">
+//         <div style={{
+//             zIndex: 1,
+//         }}>
+//             <div className={"text-center mb-10"}>
+//                 <h3 className='autobotGrad text-3xl md:text-4xl inline-block'>Pricing</h3>
+//             </div>
+//             <PricingTable />
+//         </div>
+//     </div>
+// </section>
     return (
         <div className="!bg-darkBg min-h-screen text-white">
             <Header />
@@ -111,15 +122,25 @@ const LandingPage = () => {
                     <FeaturesGrid />
                 </section>
 
-                {/* Features section */}
-                <section className="min-h-screen py-20" id="pricing">
-                    <div className={"text-center mb-10"}>
-                        <h3 className='autobotGrad text-3xl md:text-4xl inline-block'>Features</h3>
-                    </div>
-                    <PricingTable />
-                </section>
             </div>
-        </div >
+            {/* Pricing section */}
+            <section className="min-h-screen relative" id="pricing">
+                <div className="pricing-overlay py-20  ">
+                    <div style={{
+                        zIndex: 1,
+                    }}>
+                        <div className={"text-center mb-10"}>
+                            <h3 className='text-white text-3xl pb-2 md:text-4xl inline-block'>Pricing</h3>
+                            <p className="text-base font-semibold text-white/70 w-2/5 mx-auto">
+                                Supercharge your cloud management with autobotAI.
+                                Choose the plan that best suits your needs.
+                            </p>
+                        </div>
+                        <PricingTable />
+                    </div>
+                </div>
+            </section>
+        </div>
     );
 };
 

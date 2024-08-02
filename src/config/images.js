@@ -83,6 +83,7 @@ export const images = {
     abuseipdb_small: '/images/integration/svgs/abuseipdb.svg',
     virustotal: '/images/integration/svgs/virustotal.svg',
     gcp_notext: 'images/svgs/gcp_notext.svg',
+    execution: 'images/landing/execution.png',
     git: 'images/integration/svgs/git.svg',
     trend: '/images/workspace_specific/trend_micro/trend_logo.svg',
     jira: '/images/integration/jira_logo.svg',

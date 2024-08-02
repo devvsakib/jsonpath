@@ -13,9 +13,9 @@
 
   --font-synthesis: none;
   --text-rendering: optimizeLegibility;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%; */
+  --primary-lighter: #fcd34d;
+  --primary-light: #8b5cf6;
+  --primary-dark: #de6292;
 }
 
 a:hover {
@@ -274,6 +274,26 @@ div.column:nth-child(1)>ul:nth-child(1)>li:nth-child(1) {
 .item8 {
   animation-delay: calc(30s / 8 * (8 - 8) * -1);
 }
+
 .item9 {
   animation-delay: calc(30s / 8 * (8 - 9) * -1);
+}
+
+.pricing-contrast {
+  --glass-color: 0, 0, 200;
+  background: radial-gradient(circle at bottom left, rgba(#fff, 0.3) 0%, rgba(var(--glass-color), 0) 70%),
+    radial-gradient(circle at 50% 50%, rgba(var(--glass-color), 0.1) 0%, rgba(var(--glass-color), 0) 80%),
+    rgba(var(--glass-color), 0.01);
+  backdrop-filter: blur(10px);
+  /*  add a gradient border  */
+  /* border: 1px solid transparent; */
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-overlay {
+  background-image: linear-gradient(-54deg, #f5f5f550 0%, #7700ff83 20%, #FF524250 70%);
+}
+.pricing-overlay {
+  background-image: linear-gradient(-54deg, #f5f5f550 0%, #FF524250 25%, #7700ff83 90%);
 }
