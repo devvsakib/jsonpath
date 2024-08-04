@@ -32,7 +32,7 @@ const pricingData = [
         "customLocalModels": "No",
         "autobotAiSupport": "Yes",
         "basicAutomationSupportAnnually": 3,
-        "enterpriseAutomationSupport": "Unlimited",
+        "autobotAIPlatformSupport": "Unlimited",
         "price": "$500"
     },
     {
@@ -60,7 +60,7 @@ const pricingData = [
         "customLocalModels": "No",
         "autobotAiSupport": "Yes",
         "basicAutomationSupportAnnually": 5,
-        "enterpriseAutomationSupport": "Unlimited",
+        "autobotAIPlatformSupport": "Unlimited",
         "price": "$1000"
     },
     {
@@ -88,7 +88,7 @@ const pricingData = [
         "customLocalModels": "Yes",
         "autobotAiSupport": "Yes",
         "basicAutomationSupportAnnually": 24,
-        "enterpriseAutomationSupport": "Unlimited",
+        "autobotAIPlatformSupport": "Unlimited",
         "price": "$1500"
     }
 ];
@@ -107,8 +107,8 @@ const PricingCard = ({ plan }) => {
             displayKey = 'autobotAI Support';
         } else if (key === 'openAIIntegration') {
             displayKey = 'OpenAI Integration';
-        } else if (key === 'enterpriseAutomationSupport') {
-            displayKey = 'Automation Support (Contact us)';
+        } else if (key === 'autobotAIPlatformSupport') {
+            displayKey = 'autobotAI Platform Support';
         }
         else {
             displayKey = key.split(/(?=[A-Z])/).join(' ');
@@ -120,7 +120,7 @@ const PricingCard = ({ plan }) => {
                     <BsFillCheckCircleFill className="text-green-500 mr-2 mt-1 flex-shrink-0" />}
                 {}
                 <span className="text-base capitalize">
-                    {`${!["Yes", "No"].includes(value) ? value : ""} ${displayKey}`}
+                    {`${!["Yes", "No", "Unlimited"].includes(value) ? value : ""} ${displayKey}`}
                 </span>
             </li>
         );
