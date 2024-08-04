@@ -129,9 +129,9 @@ const LandingPage = () => {
                     <div style={{
                         zIndex: 1,
                     }}>
-                        <div className={"text-center mb-10"}>
+                        <div className={"text-center mb-10 px-5 md:px-20"}>
                             <h3 className='text-white text-3xl pb-2 md:text-4xl inline-block autobotGrad'>Pricing</h3>
-                            <p className="text-base font-semibold text-white/70 w-3/5 mx-auto">
+                            <p className="text-base font-semibold text-white/70 md:w-3/5 mx-auto">
                                 Supercharge your Cloud & Security Operations with autobotAI. Choose the optimal plan tailored to your needs and experience the power of hyperautomation.
                             </p>
                         </div>
