@@ -10,85 +10,85 @@ const pricingData = [
     {
         "key": 2,
         "pricingModel": "Starter",
-        "botExecution": "Up to 7000",
-        "cloudPlatformAndKubernetesAccountIntegration": 2,
-        "threatIntelligenceToolsIntegrationForEnrichment": "Unlimited",
-        "threatDetectionToolsIntegration": "Unlimited",
-        "externalAttackSurfaceToolIntegration": "Unlimited",
-        "vulnerabilityDetectionToolsIntegration": "Unlimited",
-        "siemIntegrations": "Unlimited",
-        "observabilityToolIntegration": "Unlimited",
-        "developerToolsIntegration": "Unlimited",
-        "uptimeMonitoringToolsIntegration": "Unlimited",
-        "notificationsAndCollaborationToolsIntegration": "Unlimited",
-        "secretsDetectionAndCredentialsCompromiseDetectionToolIntegration": "Unlimited",
-        "systemAdministrationToolIntegration": "Unlimited",
-        "ticketingToolIntegration": "Unlimited",
-        "workspaceDeploymentOption": "No",
-        "complianceInsightForAutomationTaskMining": "Yes",
-        "inventoryObservability": "Yes",
-        "openAIIntegration": "Yes",
-        "amazonBedrockIntegration": "Yes",
-        "customLocalModels": "No",
-        "autobotAiSupport": "Yes",
-        "basicAutomationSupportAnnually": 3,
-        "autobotAIPlatformSupport": "Unlimited",
+        "Bot_Execution": "Up to 7000",
+        "Cloud_Platform_And_Kubernetes_Account_Integration": 2,
+        "Threat_Intelligence_Tools_Integration_For_Enrichment": "Unlimited",
+        "Threat_Detection_Tools_Integration": "Unlimited",
+        "External_Attack_Surface_Tool_Integration": "Unlimited",
+        "Vulnerability_Detection_Tools_Integration": "Unlimited",
+        "SIEM_Integrations": "Unlimited",
+        "Observability_Tool_Integration": "Unlimited",
+        "Developer_Tools_Integration": "Unlimited",
+        "Uptime_Monitoring_Tools_Integration": "Unlimited",
+        "Notifications_And_Collaboration_Tools_Integration": "Unlimited",
+        "Secrets_Detection_And_Credentials_Compromise_Detection_Tool_Integration": "Unlimited",
+        "System_Administration_Tool_Integration": "Unlimited",
+        "Ticketing_Tool_Integration": "Unlimited",
+        "Workspace_Deployment_Option": "No",
+        "Compliance_Insight_For_Automation_Task_Mining": "Yes",
+        "Inventory_Observability": "Yes",
+        "OpenAI_Integration": "Yes",
+        "Amazon_Bedrock_Integration": "Yes",
+        "Custom_Local_Models": "No",
+        "autobotAI_Support": "Yes",
+        "Basic_Automation_Support_Annually": 3,
+        "AutobotAI_Platform_Support": "Unlimited",
         "price": "$500"
     },
     {
         "key": 3,
         "pricingModel": "Standard",
-        "botExecution": "Up to 20000",
-        "cloudPlatformAndKubernetesAccountIntegration": 5,
-        "threatIntelligenceToolsIntegrationForEnrichment": "Unlimited",
-        "threatDetectionToolsIntegration": "Unlimited",
-        "externalAttackSurfaceToolIntegration": "Unlimited",
-        "vulnerabilityDetectionToolsIntegration": "Unlimited",
-        "siemIntegrations": "Unlimited",
-        "observabilityToolIntegration": "Unlimited",
-        "developerToolsIntegration": "Unlimited",
-        "uptimeMonitoringToolsIntegration": "Unlimited",
-        "notificationsAndCollaborationToolsIntegration": "Unlimited",
-        "secretsDetectionAndCredentialsCompromiseDetectionToolIntegration": "Unlimited",
-        "systemAdministrationToolIntegration": "Unlimited",
-        "ticketingToolIntegration": "Unlimited",
-        "workspaceDeploymentOption": "No",
-        "complianceInsightForAutomationTaskMining": "Yes",
-        "inventoryObservability": "Yes",
-        "openAIIntegration": "Yes",
-        "amazonBedrockIntegration": "Yes",
-        "customLocalModels": "No",
-        "autobotAiSupport": "Yes",
-        "basicAutomationSupportAnnually": 5,
-        "autobotAIPlatformSupport": "Unlimited",
+        "Bot_Execution": "Up to 20000",
+        "Cloud_Platform_And_Kubernetes_Account_Integration": 5,
+        "Threat_Intelligence_Tools_Integration_For_Enrichment": "Unlimited",
+        "Threat_Detection_Tools_Integration": "Unlimited",
+        "External_Attack_Surface_Tool_Integration": "Unlimited",
+        "Vulnerability_Detection_Tools_Integration": "Unlimited",
+        "SIEM_Integrations": "Unlimited",
+        "Observability_Tool_Integration": "Unlimited",
+        "Developer_Tools_Integration": "Unlimited",
+        "Uptime_Monitoring_Tools_Integration": "Unlimited",
+        "Notifications_And_Collaboration_Tools_Integration": "Unlimited",
+        "Secrets_Detection_And_Credentials_Compromise_Detection_Tool_Integration": "Unlimited",
+        "System_Administration_Tool_Integration": "Unlimited",
+        "Ticketing_Tool_Integration": "Unlimited",
+        "Workspace_Deployment_Option": "No",
+        "Compliance_Insight_For_Automation_Task_Mining": "Yes",
+        "Inventory_Observability": "Yes",
+        "OpenAI_Integration": "Yes",
+        "Amazon_Bedrock_Integration": "Yes",
+        "Custom_Local_Models": "No",
+        "autobotAI_Support": "Yes",
+        "Basic_Automation_Support_Annually": 5,
+        "AutobotAI_Platform_Support": "Unlimited",
         "price": "$1000"
     },
     {
         "key": 4,
         "pricingModel": "Enterprise",
-        "botExecution": "Unlimited",
-        "cloudPlatformAndKubernetesAccountIntegration": "Unlimited",
-        "threatIntelligenceToolsIntegrationForEnrichment": "Unlimited",
-        "threatDetectionToolsIntegration": "Unlimited",
-        "externalAttackSurfaceToolIntegration": "Unlimited",
-        "vulnerabilityDetectionToolsIntegration": "Unlimited",
-        "siemIntegrations": "Unlimited",
-        "observabilityToolIntegration": "Unlimited",
-        "developerToolsIntegration": "Unlimited",
-        "uptimeMonitoringToolsIntegration": "Unlimited",
-        "notificationsAndCollaborationToolsIntegration": "Unlimited",
-        "secretsDetectionAndCredentialsCompromiseDetectionToolIntegration": "Unlimited",
-        "systemAdministrationToolIntegration": "Unlimited",
-        "ticketingToolIntegration": "Unlimited",
-        "workspaceDeploymentOption": "Yes",
-        "complianceInsightForAutomationTaskMining": "Yes",
-        "inventoryObservability": "Yes",
-        "openAIIntegration": "Yes",
-        "amazonBedrockIntegration": "Yes",
-        "customLocalModels": "Yes",
-        "autobotAiSupport": "Yes",
-        "basicAutomationSupportAnnually": 24,
-        "autobotAIPlatformSupport": "Unlimited",
+        "Bot_Execution": "Unlimited",
+        "Cloud_Platform_And_Kubernetes_Account_Integration": "Unlimited",
+        "Threat_Intelligence_Tools_Integration_For_Enrichment": "Unlimited",
+        "Threat_Detection_Tools_Integration": "Unlimited",
+        "External_Attack_Surface_Tool_Integration": "Unlimited",
+        "Vulnerability_Detection_Tools_Integration": "Unlimited",
+        "SIEM_Integrations": "Unlimited",
+        "Observability_Tool_Integration": "Unlimited",
+        "Developer_Tools_Integration": "Unlimited",
+        "Uptime_Monitoring_Tools_Integration": "Unlimited",
+        "Notifications_And_Collaboration_Tools_Integration": "Unlimited",
+        "Secrets_Detection_And_Credentials_Compromise_Detection_Tool_Integration": "Unlimited",
+        "System_Administration_Tool_Integration": "Unlimited",
+        "Ticketing_Tool_Integration": "Unlimited",
+        "Workspace_Deployment_Option": "Yes",
+        "Compliance_Insight_For_Automation_Task_Mining": "Yes",
+        "Inventory_Observability": "Yes",
+        "OpenAI_Integration": "Yes",
+        "Amazon_Bedrock_Integration": "Yes",
+        "Custom_Local_Models": "Yes",
+        "autobotAI_Support": "Yes",
+        "Basic_Automation_Support_Annually": 24,
+        "AutobotAI_Platform_Support": "Unlimited",
         "price": "$1500"
     }
 ];
@@ -98,21 +98,9 @@ const PricingCard = ({ plan }) => {
 
 
     const renderFeature = (key, value) => {
-        // const isCheckmark = value === 'Yes' || value === 'Unlimited' || key === 'cloudPlatformAndKubernetesAccountIntegration'
         const isCross = value === 'No';
-        const isExecution = key === 'botExecution';
+        const isExecution = key === 'Bot_Execution';
 
-        let displayKey;
-        if (key === 'autobotAiSupport') {
-            displayKey = 'autobotAI Support';
-        } else if (key === 'openAIIntegration') {
-            displayKey = 'OpenAI Integration';
-        } else if (key === 'autobotAIPlatformSupport') {
-            displayKey = 'autobotAI Platform Support';
-        }
-        else {
-            displayKey = key.split(/(?=[A-Z])/).join(' ');
-        }
         return (
             <li key={key} className="flex items-start">
                 {isCross ? <BsFillXCircleFill className="text-red-500 mr-2 mt-1 flex-shrink-0" />
@@ -120,7 +108,7 @@ const PricingCard = ({ plan }) => {
                     <BsFillCheckCircleFill className="text-green-500 mr-2 mt-1 flex-shrink-0" />}
                 {}
                 <span className="text-base capitalize">
-                    {`${!["Yes", "No", "Unlimited"].includes(value) ? value : ""} ${displayKey}`}
+                    {`${!["Yes", "No", "Unlimited"].includes(value) ? value : ""} ${key.split("_").join(' ')}`}
                 </span>
             </li>
         );
