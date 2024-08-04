@@ -33,7 +33,6 @@ const LandingPage = () => {
 // </section>
     return (
         <div className="!bg-darkBg min-h-screen text-white">
-            <Header />
             <div className="px-5 md:px-10">
                 {/* Banner Section */}
                 <section className="grid items-center justify-center text-center h-screen">
