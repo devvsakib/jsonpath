@@ -32,7 +32,7 @@ const FeaturesCard = ({ image, title, description, direction, video, button, id 
                         textAlign: direction === 'right' && screenSize > 1024 ? 'right' : 'left',
                     }}
                 >
-                    <div className="text-xl text-white sm:text-2xl font-semibold">
+                    <div className="autobotGrad text-xl text-white sm:text-2xl font-semibold">
                         {title}
                     </div>
                     <div className="text-base text-gray-300">
@@ -43,7 +43,7 @@ const FeaturesCard = ({ image, title, description, direction, video, button, id 
                         button &&
                         <div className="flex mt-1">
                             <a href={button.link} legacyBehavior>
-                                <span className="text-white cursor-pointer !bg-ai-pink !to-ai-orange px-6 py-2 rounded-full text-sm font-">
+                                <span className="text-white cursor-pointer !bg-ai-pink !to-ai-orange px-6 py-2 rounded-md text-sm font-">
                                     {button.text}
                                 </span>
                             </a>
