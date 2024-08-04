@@ -19,14 +19,14 @@ const router = createBrowserRouter([
                 element: <CustomJSONTree />,
             },
             {
-                path: "/landingpage",
-                element: <LandingPage />,
-            },
-            {
                 path: "/querybuilder",
                 element: <QB />,
             },
         ]
+    },
+    {
+        path: "/landingpage",
+        element: <LandingPage />,
     },
 
 ]);

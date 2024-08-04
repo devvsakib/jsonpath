@@ -33,6 +33,7 @@ const LandingPage = () => {
 // </section>
     return (
         <div className="!bg-darkBg min-h-screen text-white">
+            <Header />
             <div className="px-5 md:px-10">
                 {/* Banner Section */}
                 <section className="grid items-center justify-center text-center h-screen">
@@ -58,7 +59,7 @@ const LandingPage = () => {
 
                 {/* brand carousel */}
                 <section className="h-screen">
-                    <div className={"hidden md:block text-3xl md:text-4xl font-semibold mt-10 md:mt-0 text-center text-white "}><span className="autobotGrad">Trusted By</span></div>
+                    <div className={"hidden md:block text-3xl md:text-4xl font-semibold mt-10 md:mt-0 text-center text-white "}>Popular <span className="autobotGrad">Integrations</span></div>
                     <Carousel />
                 </section>
 
