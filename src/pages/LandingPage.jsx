@@ -132,7 +132,7 @@ const LandingPage = () => {
                         <div className={"text-center mb-10"}>
                             <h3 className='text-white text-3xl pb-2 md:text-4xl inline-block autobotGrad'>Pricing</h3>
                             <p className="text-base font-semibold text-white/70 w-2/5 mx-auto">
-                                Supercharge your Security Operations with autobotAI. Choose the plan that best suits your needs.
+                                Supercharge your Cloud & Security Operations with autobotAI. Choose the optimal plan tailored to your needs and experience the power of hyperautomation.
                             </p>
                         </div>
                         <PricingTable />
