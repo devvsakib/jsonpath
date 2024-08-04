@@ -131,7 +131,7 @@ const PricingCard = ({ plan }) => {
 
             <h3 className="text-3xl md:text-4xl font-bold text-center mb-8">{plan.pricingModel}</h3>
             {/* <h3 className="text-3xl font-bold text-center mb-5">{plan.price} <span className='dark:text-gray-400 text-gray-600 text-base font-semibold leading-6'>/month</span></h3> */}
-            <Button className="h-auto text-lg mb-2 bg-gradient-to-r from-ai-pink/0 to-ai-orange/90 border-none text-white hover:!text-white">
+            <Button className="h-auto text-lg mb-2 bg-gradient-to-l from-ai-pink/90 to-ai-orange border-none text-white hover:!text-white">
                 Demo
             </Button>
             <a
