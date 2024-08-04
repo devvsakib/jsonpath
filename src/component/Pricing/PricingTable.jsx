@@ -130,7 +130,7 @@ const PricingCard = ({ plan }) => {
             {/* <div className="flex flex-col p-6 rounded-lg bg-gray-900/80 w-full max-w-sm mx-auto mb-8 backdrop-blur-md"> */}
 
             <h3 className="text-3xl font-bold text-center mb-5">{plan.pricingModel}</h3>
-            <h3 className="text-3xl font-bold text-center mb-5">{plan.price} <span className='dark:text-gray-400 text-gray-600 text-base font-semibold leading-6'>/month</span></h3>
+            {/* <h3 className="text-3xl font-bold text-center mb-5">{plan.price} <span className='dark:text-gray-400 text-gray-600 text-base font-semibold leading-6'>/month</span></h3> */}
             <Button className="w-full h-10 mb-2 bg-gradient-to-r from-ai-pink to-ai-orange border-none text-white hover:!text-white">
                 Demo
             </Button>
