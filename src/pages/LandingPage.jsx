@@ -7,6 +7,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import Carousel from "../component/Landing/Carousel";
 import Testimonial from "../component/Landing/Testimonial";
 import { Button } from "antd";
+import Herosection from "../component/Landing/Herosection";
 
 const LandingPage = () => {
     const [browserWidth, setBrowserWidth] = useState(0);
@@ -51,44 +52,14 @@ const LandingPage = () => {
     ]
 
     return (
-        <div className="!bg-darkBg min-h-screen text-white">
+        <div className="!bg-darkBg min-h-screen text-white overflow-hidden">
             {/* <div className="fixed w-full">
                 <Header />
             </div> */}
+                <Herosection />
             <div className=" max-w-[1280px] mx-auto">
                 {/* Banner Section */}
-                <section className="grid items-center justify-between px-5 md:px-10 text-center h-screen banne1rBg z-10 overflow-hidden relative"
-                >
-
-                    <div className="z-40  grid md:grid-cols-2 justify-between items-center  w-11/12">
-                        <div className="text-left">
-                            <div className='flex flex-col items-center md:items-start'>
-                                <p className={"text-2xl sm:text-3xl md:text-5xl font-bold autobotGrad autobotGrad stroke-black stroke-2"}>
-                                    Making <br /> Automation Easy
-                                </p>
-                                <div className="mx-auto">Hyperautomate with NoCode, LowCode and FullCode flexibility.</div>
-                            </div>
-                            <a href='https://shunyeka.zohobookings.in/#/customer/182672000000028016?booknow=true' target='_blank' >
-                                <button
-                                    className='w-fit mt-5 text-white rounded px-5 sm:px-6 py-2 bg-gradient-to-r from-ai-pink to-ai-orange hover:bg-gray-800 border-none cursor-pointer'
-                                    style={{
-                                        background: 'linear-gradient(to right, orange, rgb(236 72 120))',
-                                    }}
-                                >
-                                    Get a demo
-                                </button>
-                            </a>
-                        </div>
-                        {/* <div className="bannerFlowGraph">
-                            <img src="images/landing/workflow.svg" className="w-5/12 relative left-24 rounded-xl shadow-2xl shadow-ai-pink mx-auto -skew-x-[25deg] skew-y-[12deg]" />
-                        </div> */}
-                    </div>
-                    <img src="images/landing/banner_bg_logo.svg" className="absolute -top-20 right-0 bottom-0"
-                        style={{
-                            zIndex: 1
-                        }}
-                    />
-                </section>
+                <div className="grid-background"></div>
 
                 {/* brand carousel */}
                 <section className="h-screen mt-20 carouselBg mb-20">
@@ -185,7 +156,7 @@ const LandingPage = () => {
                     }}>
                         <div className={"text-center mb-10 px-5 md:px-20"}>
                             <h3 className='text-white text-3xl pb-2 md:text-5xl inline-block autobotGrad'>Pricing</h3>
-                            <p className="text-base font-semibold text-white/70 md:w-3/5 mx-auto">
+                            <p className="text-base text-white/70 md:w-3/5 mx-auto">
                                 Supercharge your Cloud & Security Operations with autobotAI. Choose the optimal plan tailored to your needs and experience the power of hyperautomation.
                             </p>
                         </div>
@@ -197,7 +168,7 @@ const LandingPage = () => {
             <section className=" relative py-20" id="footer">
                 <div className="max-w-[1280px] mx-auto">
                     {/* #36A4F5 */}
-                    <div className="mb-20 bg-gradient-to-r from-[#773DCA] via-[#1755E3] to-[#36A4F5] p-20 rounded-lg relative flex justify-between items-center max-w-4xl mx-auto">
+                    <div className="mb-20 bg-gradient-to-r  to-[#16161650] from-[#DF638F50] p-20 rounded-lg relative flex justify-between items-center max-w-4xl mx-auto">
                         <div>
                             <h3 className="font-bol text-3xl mb-1">Try <span className="autobotGrad">autobotAI</span> today!</h3>
                             <p className="text-xl">Streamline tasks with AI-powered <br /> automation.</p>

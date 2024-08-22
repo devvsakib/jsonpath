@@ -114,7 +114,7 @@ const PricingCard = ({ plan }) => {
         );
     };
     return (
-        <div className="bg-white dark:bg-gradient-to-tl dark:from-gray-900/80 dark:to-gray-900/50 ring-gray-300/70 dark:ring-gray-700 max-w-lg ring-1 rounded-3xl p-5 md:p-8 mb-8 pricing-contrast flex flex-col"  >
+        <div className="bg-white dark:bg-gradient-to-tl dark:from-gray-900/80 dark:to-gray-900/70 ring-gray-300/70 dark:ring-gray-700 max-w-lg ring-1 rounded-3xl p-5 md:p-8 mb-8 pricing-contrast flex flex-col backdrop-blur-lg"  >
             {/* <div className="flex flex-col p-6 rounded-lg bg-gray-900/80 w-full max-w-sm mx-auto mb-8 backdrop-blur-md"> */}
 
             <h3 className="text-3xl md:text-4xl font-bold text-center mb-8">{plan.pricingModel}</h3>
