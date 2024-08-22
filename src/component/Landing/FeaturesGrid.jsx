@@ -18,8 +18,8 @@ export default function FeaturesGrid() {
         },
         {
             video: images.approval_gif,
-            title: "Ensure Compliance with Approval-Based Bots",
-            description: "autobotAI's bots feature approval systems, ensuring that all bot actions are verified and approved by authorized personnel for added accountability and compliance.",
+            title: "Enhance Decision-Making with Contextual Approvals",
+            description: "autobotAI ensures critical operations, like incident response and remediation, are supported by LLM-driven contextual summaries and notifications, enabling ITOps, SOC, and CloudOps teams to make swift, informed approval decisions.",
         },
         {
             direction: "right",
@@ -29,8 +29,8 @@ export default function FeaturesGrid() {
         },
         {
             video: images.inventory_gif,
-            title: "Resource Inventory",
-            description: "Keep track of your data with ease using autobotAI data inventory management feature, ensuring you always have the information you need at your fingertips."
+            title: "Automation Insights",
+            description: "Gain essential insights into compliance violations, incidents, and resource inventories. These insights support process and task mining, enabling the creation of targeted automation workflows with AI-driven assistance."
         }
     ]
     return (
