@@ -10,9 +10,9 @@ export default function FeaturesGrid() {
         },
         {
             direction: "right",
-            video: images.inventory_gif,
-            title: "Resource Inventory",
-            description: "Keep track of your data with ease using autobotAI data inventory management feature, ensuring you always have the information you need at your fingertips.",
+            video: images.data_visualization_gif,
+            title: "Custom Dashboard for 360° view of cloud.",
+            description: "autobotAI provides highly accurate and useful visualization. This provides you a birds view of how things are going and you can act quickly if anything does not seem right.",
         },
         {
             video: images.approval_gif,
@@ -21,9 +21,9 @@ export default function FeaturesGrid() {
         },
         {
             direction: "right",
-            video: images.data_visualization_gif,
-            title: "Custom Dashboard for 360° view of cloud.",
-            description: "autobotAI provides highly accurate and useful visualization. This provides you a birds view of how things are going and you can act quickly if anything does not seem right.",
+            video: images.inventory_gif,
+            title: "Resource Inventory",
+            description: "Keep track of your data with ease using autobotAI data inventory management feature, ensuring you always have the information you need at your fingertips.",
         },
         {
             video: images.integrations_gif,

@@ -24,7 +24,7 @@ const FeaturesCard = ({ image, title, description, direction, video, button, id 
             <div className='flex flex-col items-center'>
                 <img
                     src={video}
-                    className="lg:w-8/12 rounded-tr-[1.5rem] rounded-bl-[1.5rem] rounded-xl"
+                    className="lg:w-[450px] rounded-tr-[1.5rem] rounded-bl-[1.5rem] rounded-xl"
                 />
                 <div className='relative flex flex-col mt-6 md:w-2/3 gap-2'
                     style={{

@@ -22,7 +22,7 @@ const shuffleArray = (array) => {
 const Carousel = () => {
     const shuffledImageData = shuffleArray(imageData);
     return (
-        <div>
+        <div className="pt-20">
             <div class="wrapper">
                 {imageData.map((image, index) => (
                     <div className={`itemLeft item${index + 1}`} key={index}>
