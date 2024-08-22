@@ -62,8 +62,8 @@ const LandingPage = () => {
                 <div className="grid-background"></div>
 
                 {/* brand carousel */}
-                <section className="h-screen mt-20 carouselBg mb-20">
-                    <div className={"hidden md:block text-3xl md:text-4xl font-semibold mt-10 md:mt-0 text-center text-white mb-20 pt-24"}>Popular <span className="autobotGrad">Integrations</span></div>
+                <section className="h-screen mt-52 carouselBg mb-20 block">
+                    <div className={"text-3xl md:text-4xl font-semibold mt-10 md:mt-0 text-center text-white mb-20 pt-24"}>Popular <span className="autobotGrad">Integrations</span></div>
                     <Carousel />
                 </section>
 

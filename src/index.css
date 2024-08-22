@@ -303,7 +303,7 @@ div.column:nth-child(1)>ul:nth-child(1)>li:nth-child(1) {
 }
 
 .carouselBg {
-  background: radial-gradient(circle at bottom, #8b5cf650, transparent 60%);
+  background: radial-gradient(circle at bottom, #fc33af50, transparent 60%);
 }
 
 .home-header-light-pink {
