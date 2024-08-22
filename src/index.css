@@ -348,8 +348,3 @@ div.column:nth-child(1)>ul:nth-child(1)>li:nth-child(1) {
   background-size: 40px 40px; /* Adjust the size of the grid squares */
   z-index: 1;
 }
-
-/* herosection css */
-.welcome-text{
-
-}
