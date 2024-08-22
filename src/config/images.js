@@ -43,6 +43,7 @@ export const images = {
     ignoreissueIcon: '/images/icon-ignore-issue.svg',
     downloadreportIcon: '/images/icon-download-report.svg',
     aws: '/images/svgs/aws.svg',
+    linux: '/images/svgs/linux.svg',
     azure: '/images/svgs/azure.svg',
     ollama: '/images/svgs/ollama.svg',
     cazure: '/images/integration/cazure.png',

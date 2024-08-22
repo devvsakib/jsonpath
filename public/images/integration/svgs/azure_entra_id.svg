@@ -1,0 +1,30 @@
+<svg version="1.1" id="bdb56329-4717-4410-aa13-4505ecaa4e46" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19.3 19.3"
+    style="enable-background:new 0 0 19.3 19.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#50E6FF;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:url(#SVGID_1_);}
+	.st3{fill:#53B1E0;}
+	.st4{fill:#9CEBFF;}
+	.st5{fill:url(#SVGID_2_);}
+</style>
+<polygon class="st0" points="1.7,10.8 9.6,16 17.6,10.8 18.7,12 9.6,17.8 0.7,12 "/>
+<polygon class="st1" points="2.3,10.2 9.6,1.5 17.1,10.2 9.6,14.9 "/>
+<polygon class="st0" points="9.6,1.5 9.6,14.9 2.3,10.2 "/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="13.9066" y1="7.6343" x2="9.2766" y2="16.4043" gradientTransform="matrix(1 0 0 -1 0 21.3033)">
+	<stop offset="0" style="stop-color:#1988D9"/>
+	<stop offset="0.9" style="stop-color:#54AEF0"/>
+</linearGradient>
+<polygon class="st2" points="9.6,1.5 9.6,14.9 17.1,10.2 "/>
+<polygon class="st3" points="9.6,8.4 17.1,10.2 9.6,14.9 "/>
+<polygon class="st4" points="9.6,14.9 2.3,10.2 9.6,8.4 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="11.9132" y1="10.1826" x2="15.1132" y2="4.6626" gradientTransform="matrix(1 0 0 -1 0 21.3033)">
+	<stop offset="0.1" style="stop-color:#54AEF0"/>
+	<stop offset="0.29" style="stop-color:#4FABEE"/>
+	<stop offset="0.51" style="stop-color:#41A2E9"/>
+	<stop offset="0.74" style="stop-color:#2A93E0"/>
+	<stop offset="0.88" style="stop-color:#1988D9"/>
+</linearGradient>
+<polygon class="st5" points="9.6,17.8 18.7,12 17.6,10.8 9.6,16 "/>
+</svg>

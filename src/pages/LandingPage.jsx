@@ -98,11 +98,11 @@ const LandingPage = () => {
 
                 {/* Video section */}
                 <section className="h-screen my-44">
-                    <div className={"block md:hidden text-3xl md:text-5xl font-semibold mt-10 md:mt-0 text-center text-white"}>What is<span className="autobotGrad"> autobotAI</span>?</div>
-                    <div className={"hidden md:block text-3xl md:text-5xl font-semibold mt-10 md:mt-0 text-center text-white "}>What is<span className="autobotGrad"> autobotAI</span>?</div>
+                    <div className={"block md:hidden text-3xl md:text-5xl font-semibold mt-10 md:mt-0 text-center text-white autobotGrad"}>Why Automate?</div>
+                    <div className={"hidden md:block text-3xl md:text-5xl font-semibold mt-10 md:mt-0 text-center text-white autobotGrad"}>Why Automate??</div>
                     <div className="md:w-2/4  mx-auto rounded-md mt-10 md:mt-20">
                         <video className='w-full rounded-lg border-black overflow-hidden' style={{ border: "1px solid" }} controls>
-                            <source src="/videos/autobotAI_introductory.mp4" autoPlay={false} type="video/mp4" />
+                            <source src="/videos/autobotAI 2024 new full.mp4" autoPlay={false} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>

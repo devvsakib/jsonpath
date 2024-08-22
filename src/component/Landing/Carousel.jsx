@@ -10,6 +10,17 @@ const imageData = [
     { name: "aws_ses", src: images.aws_ses },
     { name: "google_chat", src: images.google_chat },
 ];
+const imageData1 = [
+    { name: "linux", src: images.linux },
+    { name: "zendesk", src: images.zendesk },
+    { name: "datadog", src: images.datadog },
+    { name: "amazon_security_lake", src: images.amazon_security_lake },
+    { name: "hibp", src: images.hibp },
+    { name: "urlscan", src: images.urlscan },
+    { name: "newrelic", src: images.newrelic },
+    { name: "webhook", src: images.webhook },
+    { name: "jumpcloud", src: images.jumpcloud },
+];
 const shuffleArray = (array) => {
     let shuffledArray = array.slice();
     for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -37,7 +48,7 @@ const Carousel = () => {
                 ))}
             </div>
             <div class="wrapper">
-                {shuffledImageData.map((image, index) => (
+                {imageData1.map((image, index) => (
                     <div className={`itemRight item${index + 1}`} key={index}>
                         <div>
                             <img

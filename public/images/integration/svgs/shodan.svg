@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 320 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.5;">
+    <g id="Artboard1" transform="matrix(1,0,0,1,13,14)">
+        <rect x="-13" y="-14" width="320" height="320" style="fill:none;"/>
+        <g transform="matrix(0.939394,0,0,0.939394,-5.39394,-13.7879)">
+            <circle cx="224.5" cy="234.5" r="82.5" style="fill:none;stroke:rgb(200,50,55);stroke-width:12.77px;"/>
+        </g>
+        <g transform="matrix(0.521969,1.01145,-0.911827,0.470558,182.634,-475.936)">
+            <ellipse cx="422.5" cy="261.5" rx="52.5" ry="57.5" style="fill:url(#_Linear1);"/>
+        </g>
+        <g transform="matrix(0.543949,1.10658,-1.018,0.500408,118.45,-481.605)">
+            <ellipse cx="422.5" cy="261.5" rx="52.5" ry="57.5" style="fill:url(#_Linear2);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-7,-10)">
+            <path d="M111.294,61.375C120.663,37.5 144.066,20.563 171.423,20.563C207.022,20.563 235.923,49.241 235.923,84.563C235.923,119.886 207.022,148.563 171.423,148.563C165.631,148.563 160.017,147.804 154.67,146.379C146.32,175.294 119.797,196.454 88.406,196.454C50.324,196.454 19.406,165.312 19.406,126.954C19.406,88.596 50.324,57.454 88.406,57.454C96.426,57.454 104.128,58.835 111.294,61.375Z" style="fill:none;stroke:rgb(200,50,55);stroke-width:12px;stroke-linecap:square;"/>
+        </g>
+        <g transform="matrix(1.189,0,0,1.17568,-15.6942,-34.1622)">
+            <ellipse cx="82.5" cy="129" rx="36.5" ry="37" style="fill:white;"/>
+        </g>
+        <g transform="matrix(1.03867,0,0,1.02703,78.7124,-58.33)">
+            <ellipse cx="82.5" cy="129" rx="36.5" ry="37" style="fill:white;"/>
+        </g>
+        <g transform="matrix(0.823617,1.11064,-1.00491,0.745208,120.305,-457.618)">
+            <ellipse cx="422.5" cy="261.5" rx="52.5" ry="57.5" style="fill:url(#_Linear3);"/>
+        </g>
+        <g transform="matrix(1.40767,0,0,1.39189,89.3671,26.9459)">
+            <ellipse cx="82.5" cy="129" rx="36.5" ry="37" style="fill:white;"/>
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(105,0,0,115,370,261.5)"><stop offset="0" style="stop-color:rgb(232,171,173);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(211,93,97);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(105,0,0,115,370,261.5)"><stop offset="0" style="stop-color:rgb(232,171,173);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(211,93,97);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(105,0,0,115,370,261.5)"><stop offset="0" style="stop-color:rgb(232,171,173);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(211,93,97);stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>
